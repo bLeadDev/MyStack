@@ -25,7 +25,13 @@ void stack_delete(MyStack* stack){
 * returns false if not (the stack is full)
 */
 bool stack_push(MyStack* pStack, int data){
-  return false;
+  pStack->top++;
+  if(pStack->top >= MAX_STACK_SIZE){
+    pStack->top--;
+    return false;
+  }
+  pStack->data[pStack->top] = data;
+  return true;
 }
 
 /*
@@ -35,6 +41,7 @@ bool stack_push(MyStack* pStack, int data){
 * returns false if the stack was empty
 */
 bool stack_pop(MyStack* pStack, int* value){
+  *value = pStack->data[pStack->top];
   return false;
 }
 
