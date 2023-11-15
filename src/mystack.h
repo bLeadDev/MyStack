@@ -6,7 +6,7 @@
 #define MAX_STACK_SIZE 16
 
 typedef struct tag_name {
-   int top;                // the top of the stack
+   int top;                   // the top of the stack
    int data[MAX_STACK_SIZE];  //the actual stack data
 } MyStack;
 
